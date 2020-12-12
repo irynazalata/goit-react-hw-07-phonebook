@@ -1,10 +1,10 @@
 {
-  "name": "goit-react-hw-06-phonebook",
+  "name": "goit-react-hw-07-phonebook",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irynazalata/goit-react-hw-06-phonebook.git"
+    "url": "git+https://github.com/irynazalata/goit-react-hw-07-phonebook.git"
   },
-  "homepage": "https://irynazalata.github.io/goit-react-hw-06-phonebook/",
+  "homepage": "https://irynazalata.github.io/goit-react-hw-07-phonebook/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
