@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import contactsOperations from '../../redux/contacts/contactsOperations';
+import contactsSelectors from '../../redux/contacts/contactsSelectors';
+import Notification from '../../shared/Notification/Notification';
 import styles from './Form.module.css';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import contactsOperations from '../../redux/operations/contactsOperations';
-import Notification from '../../shared/Notification/Notification';
 
 class Form extends Component {
   static propTypes = {
@@ -78,7 +79,7 @@ class Form extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: state.contacts,
+  contacts: contactsSelectors.getContacts(state),
 });
 
 const mapDispatchToProps = {

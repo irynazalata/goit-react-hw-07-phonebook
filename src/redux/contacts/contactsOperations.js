@@ -9,7 +9,7 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
-} from '../actions/contactsAction';
+} from './contactsAction';
 
 const addContact = ({ name, number }) => dispatch => {
   dispatch(addContactRequest());

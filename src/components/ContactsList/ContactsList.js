@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from './ContactsList.module.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ContactsListItem from './ContactsListItem/ContactsListItem';
+import styles from './ContactsList.module.css';
+import contactsSelectors from '../../redux/contacts/contactsSelectors';
 import PropTypes from 'prop-types';
 
 const ContactsList = ({ searchContact }) => {
@@ -29,13 +30,8 @@ ContactsList.propTypes = {
   ).isRequired,
 };
 
-const mapStateToProps = state => {
-  const { contacts, filter } = state;
-  const filteredContacts = contacts.filter(contact => {
-    return contact.name.toLowerCase().includes(filter.toLowerCase());
-  });
-  return {
-    searchContact: filteredContacts,
-  };
-};
+const mapStateToProps = state => ({
+  searchContact: contactsSelectors.getFilteredContacts(state),
+});
+
 export default connect(mapStateToProps)(ContactsList);

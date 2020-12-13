@@ -5,7 +5,8 @@ import Loader from './shared/Loader/Loader';
 import Form from './components/Form/Form';
 import ContactsList from './components/ContactsList/ContactsList';
 import Filter from './components/Filter/Filter';
-import contactsOperations from './redux/operations/contactsOperations';
+import contactsOperations from './redux/contacts/contactsOperations';
+import contactsSelectors from './redux/contacts/contactsSelectors';
 import './App.css';
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  isLoading: state.loading,
+  isLoading: contactsSelectors.getLoading(state),
 });
 
 const mapDispatchToProps = {

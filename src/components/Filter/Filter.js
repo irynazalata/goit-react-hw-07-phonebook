@@ -1,9 +1,10 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { connect } from 'react-redux';
+import filterContacts from '../../redux/filter/filterAction';
+import contactsSelectors from '../../redux/contacts/contactsSelectors';
 import styles from './Filter.module.css';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import filterContacts from '../../redux/actions/filterAction';
 
 const Filter = ({ filter, filterContact, contacts }) => {
   return (
@@ -36,8 +37,8 @@ Filter.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    filter: state.filter,
-    contacts: state.contacts,
+    filter: contactsSelectors.getFilter(state),
+    contacts: contactsSelectors.getContacts(state),
   };
 };
 

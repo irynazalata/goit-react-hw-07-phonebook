@@ -9,7 +9,7 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
-} from '../actions/contactsAction';
+} from './contactsAction';
 
 const addContact = (state, action) => {
   return [...state, action.payload];
